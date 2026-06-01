@@ -164,7 +164,9 @@ function Set-FirefoxProfilePopupPrefs([ValidateSet('Enable','Disable')]$Action) 
         $markerStart = '// BEGIN universal-browser-adblocker-toggle'
         $markerEnd = '// END universal-browser-adblocker-toggle'
         $existing = if (Test-Path $userjs) { Get-Content -LiteralPath $userjs -Raw } else { '' }
-        $clean = [regex]::Replace($existing, "(?ms)^\Q$markerStart\E.*?^\Q$markerEnd\E\r?\n?", '')
+        $startPattern = [regex]::Escape($markerStart)
+        $endPattern = [regex]::Escape($markerEnd)
+        $clean = [regex]::Replace($existing, "(?ms)^$startPattern.*?^$endPattern\r?\n?", '')
         if ($Action -eq 'Enable') {
             $block = @"
 $markerStart
