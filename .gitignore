@@ -1,0 +1,26 @@
+# PowerShell / Windows transient files
+*.log
+*.tmp
+*.bak
+*.swp
+Thumbs.db
+Desktop.ini
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Test/build/cache outputs
+coverage/
+dist/
+build/
+.cache/
+__pycache__/
+*.pyc
+
+# Secrets / local machine exports
+*.env
+secrets.*
+*.key
+*.pem
