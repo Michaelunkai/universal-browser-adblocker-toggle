@@ -1,5 +1,7 @@
 # universal-browser-adblocker-toggle
 
+Repository: https://github.com/Michaelunkai/universal-browser-adblocker-toggle
+
 A Windows PowerShell project that applies browser-wide pop-up blocking plus uBlock Origin ad blocking / YouTube ad filtering for Chrome and Firefox profiles from one command.
 
 The main entry point is:
